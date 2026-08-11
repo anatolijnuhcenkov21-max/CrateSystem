@@ -1,0 +1,92 @@
+settings:
+  animation-ticks: 5
+  animation-cycles: 18
+  messages:
+    no-permission: '&cYou do not have permission.'
+    crate-not-found: '&cCrate &e%crate% &cnot found.'
+    player-not-found: '&cPlayer not found.'
+    key-given: '&aYou gave &e%amount%x %crate% key &ato &e%player%&a.'
+    key-received: '&aYou received &e%amount%x %crate% key&a.'
+    block-set: '&aCrate &e%crate% &aplaced on the targeted block.'
+    block-not-found: '&cNo crate registered on that block.'
+    block-removed: '&aCrate block removed.'
+    need-key: '&cYou need a &e%crate% key &cto open this crate!'
+    won-item: '&aYou won: &e%item%&a!'
+    won-money: '&aYou won &e%amount% coins&a!'
+    won-command: '&aReward delivered!'
+    economy-missing: '&cEconomyPlus not found — money reward skipped.'
+    reloaded: '&aCrates reloaded.'
+    list-header: '&6&lCrates:'
+    list-entry: '&7- &e%crate% &7(%rewards% rewards)'
+    gui-title: '&8Crate: %crate%'
+    usage: '&cUsage: /crate <givekey|setblock|removeblock|list|open|reload>'
+crates:
+  common:
+    display-name: '&7Common Crate'
+    key:
+      material: TRIPWIRE_HOOK
+      name: '&7Common Key'
+      lore:
+        - '&7Right-click a Common Crate to open it.'
+      glow: true
+    rewards:
+      - type: ITEM
+        weight: 40
+        item:
+          material: IRON_INGOT
+          amount: 16
+          name: '&7Iron Ingots'
+      - type: ITEM
+        weight: 25
+        item:
+          material: DIAMOND
+          amount: 1
+          name: '&bDiamond'
+      - type: MONEY
+        weight: 25
+        amount: 100
+      - type: COMMAND
+        weight: 9
+        command: 'give %player% diamond 1'
+      - type: ITEM
+        weight: 1
+        item:
+          material: NETHERITE_INGOT
+          amount: 1
+          name: '&6&lJACKPOT!'
+  legendary:
+    display-name: '&6&lLegendary Crate'
+    key:
+      material: BLAZE_ROD
+      name: '&6Legendary Key'
+      lore:
+        - '&7Right-click a Legendary Crate to open it.'
+      glow: true
+    rewards:
+      - type: MONEY
+        weight: 30
+        amount: 500
+      - type: ITEM
+        weight: 30
+        item:
+          material: DIAMOND
+          amount: 4
+          name: '&bDiamonds x4'
+      - type: COMMAND
+        weight: 20
+        command: 'give %player% diamond_block 1'
+      - type: ITEM
+        weight: 15
+        item:
+          material: EMERALD_BLOCK
+          amount: 2
+          name: '&aEmerald Blocks'
+      - type: ITEM
+        weight: 5
+        item:
+          material: NETHERITE_SWORD
+          amount: 1
+          name: '&cLegendary Blade'
+          enchants:
+            SHARPNESS: 5
+            FIRE_ASPECT: 2

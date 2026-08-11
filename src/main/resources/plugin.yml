@@ -1,0 +1,15 @@
+name: CrateSystem
+version: 1.0.0
+main: com.crystalox.crate.CratePlugin
+api-version: '1.16'
+softdepend: [EconomyPlus]
+commands:
+  crate:
+    usage: /crate <givekey|setblock|removeblock|list|open|reload> ...
+permissions:
+  crystalox.crate.admin:
+    default: op
+    description: 'Admin access to CrateSystem'
+  crystalox.crate.use:
+    default: true
+    description: 'Open crates'

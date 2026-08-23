@@ -189,6 +189,9 @@ public class CrateCommand implements CommandExecutor, TabCompleter {
             CrateGui.open(player, crate, plugin, crateManager);
             return;
         }
+        if (CrateGui.isOpening(player)) {
+            return;
+        }
         ItemStack held = player.getInventory().getItemInMainHand();
         if (held == null || !ItemParser.matches(held, crate.getKeyItem())) {
             player.sendMessage(msg("need-key").replace("%crate%", crate.getDisplayName()));

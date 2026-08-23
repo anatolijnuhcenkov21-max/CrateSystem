@@ -15,6 +15,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockExplodeEvent;
 import org.bukkit.event.entity.EntityExplodeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -35,6 +36,9 @@ public class CrateBlockListener implements Listener {
         if (event.getAction() != Action.RIGHT_CLICK_BLOCK) {
             return;
         }
+        if (event.getHand() != EquipmentSlot.HAND) {
+            return;
+        }
         Block block = event.getClickedBlock();
         if (block == null) {
             return;
@@ -49,6 +53,9 @@ public class CrateBlockListener implements Listener {
             return;
         }
         Player player = event.getPlayer();
+        if (CrateGui.isOpening(player)) {
+            return;
+        }
         if (player.hasPermission("crystalox.crate.admin")) {
             CrateGui.open(player, crate, plugin, crateManager);
             return;

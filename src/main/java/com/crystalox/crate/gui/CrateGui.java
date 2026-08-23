@@ -39,6 +39,9 @@ public final class CrateGui {
     }
 
     public static void open(Player player, Crate crate, JavaPlugin plugin, CrateManager crateManager) {
+        if (crate.getRewards().isEmpty()) {
+            return;
+        }
         if (!OPENING.add(player.getUniqueId())) {
             return;
         }
@@ -73,6 +76,10 @@ public final class CrateGui {
         }, 1L, crateManager.getAnimationTicks());
         ANIM_TASKS.put(player.getUniqueId(), task);
         taskRef.set(task);
+    }
+
+    public static boolean isOpening(Player player) {
+        return OPENING.contains(player.getUniqueId());
     }
 
     public static class GuiListener implements Listener {

@@ -16,6 +16,7 @@ dependencies {
 
 compileJava {
     options.release = 8
+    options.encoding = 'UTF-8'
 }
 
 configurations.compileClasspath {
